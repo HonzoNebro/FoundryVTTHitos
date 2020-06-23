@@ -1,0 +1,27 @@
+{
+  "name": "hitos",
+  "title": "Hitos",
+  "description": "The Hitos system for FoundryVTT!",
+  "version": "1.0.0",
+  "minimumCoreVersion": "0.6.0",
+  "compatibleCoreVersion": "0.6.0",
+  "templateVersion": 2,
+  "author": "Honzo",
+  "esmodules": ["module/hitos.js"],
+  "styles": ["css/hitos.css"],
+  "scripts": [],
+  "packs": [],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "gridDistance": 5,
+  "gridUnits": "ft",
+  "url": "",
+  "manifest": "",
+  "download": "",
+  "license": "LICENSE.txt"
+}

@@ -1,0 +1,260 @@
+{
+  "Actor": {
+    "types": [
+      "character"
+    ],
+    "templates": {
+      "base": {
+        "concept": {
+          "value": "Goblin honesto y algo borracho"
+        },
+        "quote": {
+          "value": "Splug no ha mentido, el no se ha bebido la cerveza"
+        }
+      }
+    },
+    "character": {
+      "templates": [
+        "base"
+      ],
+      "biography": "Splug es el mejor guardia goblin que hay, jamás toca la cerveza",
+      "attributes": {
+        "str": {
+          "value": 3,
+          "min": 1,
+          "max": 12,
+          "text": "Pequeñito y flacucho"
+        },
+        "ref": {
+          "value": 8,
+          "min": 3,
+          "max": 12,
+          "text": "La agilidad que da su estatura"
+        },
+        "wil": {
+          "value": 3,
+          "min": 1,
+          "max": 12,
+          "text": "A veces toma decisiones"
+        },
+        "int": {
+          "value": 2,
+          "min": 1,
+          "max": 12,
+          "text": "Muy confiado"
+        }
+      },
+      "drama_attributes": {
+        "drama": {
+          "value": 6,
+          "min": 0,
+          "max": 10
+        },
+        "dramatic_points": {
+          "value": 0,
+          "min": 0,
+          "max": 10
+        }
+      },
+      "abilities": {
+        "shape": {
+          "value": 7,
+          "text": "Acostumbrado a recibir golpes"
+        },
+        "combat": {
+          "value": 3,
+          "text": "Curbirse la cabeza con rápidez"
+        },
+        "perception": {
+          "value": 4,
+          "text": "Vigilar barriles de cerveza"
+        },
+        "subterfugue": {
+          "value": 6,
+          "text": "Muy bueno ocultando secretos"
+        },
+        "interaction": {
+          "value": 6,
+          "text": "Carismático y afable"
+        },
+        "culture": {
+          "value": 4,
+          "text": "Sabe de cuevas, de goblins y de wargos"
+        },
+        "profession": {
+          "value": 5,
+          "text": "Vigilante de guaridas"
+        },
+        "other_1": {
+          "value": 0,
+          "text": ""
+        },
+        "other_2": {
+          "value": 0,
+          "text": ""
+        }
+      },
+      "other_abilities": {
+        "psyonic": {
+          "value": 1,
+          "text": "telequinesis"
+        },
+        "magic": {
+          "value": 2,
+          "text": "rayitos"
+        },
+        "witchcraft": {
+          "value": 3,
+          "text": "vodoo"
+        },
+        "storeism": {
+          "value": 4,
+          "text": "echar las cartas"
+        },
+        "other_3": {
+          "value": 0,
+          "text": ""
+        }
+      },
+      "milestones": {
+        "milestone_1": {
+          "value": "En una ocasión fue encerrado por no proteger la cerveza"
+        },
+        "milestone_2": {
+          "value": "Un grupo de aventureros le ayudó a escapar"
+        },
+        "milestone_3": {
+          "value": ""
+        },
+        "milestone_4": {
+          "value": ""
+        }
+      },
+      "complication": {
+        "value": "Tiene una curiosa forma de comprender las cosas"
+      },
+      "combat": {
+        "initiative": {
+          "value": 9
+        },
+        "defense": {
+          "value": 20
+        },
+        "unawere_defense": {
+          "value": 17
+        },
+        "melee_damage_bonus": {
+          "value": 3
+        },
+        "ranged_damage_bonus": {
+          "value": 1
+        }  
+      },
+      "weapons_or_attacks": {
+        "woa_1": {
+          "name": "machete",
+          "damage": "C"
+        },
+        "woa_2": {
+          "name": "pistola",
+          "damage": "C"
+        },
+        "woa_3": {
+          "name": "bate",
+          "damage": "C"
+        }
+      },
+      "health": {
+        "endurance": {
+          "value": 4
+        },
+        "resistance": {
+          "resistance_1": {
+            "value": 4,
+            "min": 0,
+            "max": 12
+          },
+          "resistance_2": {
+            "value": 4,
+            "min": 0,
+            "max": 12
+          },
+          "resistance_3": {
+            "value": 4,
+            "min": 0,
+            "max": 12
+          }
+        },
+        "aftermath": {
+          "aftermath_1": {
+            "value": ""
+          },
+          "aftermath_2": {
+            "value": ""
+          },
+          "aftermath_3": {
+            "value": ""
+          }
+        }
+      },
+      "sanity": {
+        "fortitude": {
+          "value": 7
+        },
+        "mental_stability": {
+          "mental_stability_1": {
+            "value": 8,
+            "min": 0,
+            "max": 12
+          },
+          "mental_stability_2": {
+            "value": 9,
+            "min": 0,
+            "max": 12
+          },
+          "mental_stability_3": {
+            "value": 10,
+            "min": 0,
+            "max": 12
+          }
+        },
+        "mental_disorder": {
+          "mental_disorder_1": {
+            "value": ""
+          },
+          "mental_disorder_2": {
+            "value": ""
+          },
+          "mental_disorder_3": {
+            "value": ""
+          }
+        }
+      },
+      "degeneration": {
+        "value": 0,
+        "min": 0,
+        "max": 10,
+        "current_status": {
+          "value": ""
+        }
+      }
+    }
+  },
+  "Item": {
+    "types": [
+      "item"
+    ],
+    "templates": {
+      "base": {
+        "description": ""
+      }
+    },
+    "item": {
+      "templates": [
+        "base"
+      ],
+      "quantity": 1,
+      "weight": 0
+    }
+  }
+}
