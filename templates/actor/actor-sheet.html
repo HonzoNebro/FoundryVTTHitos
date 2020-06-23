@@ -9,130 +9,155 @@
       <h2 class="quote"><input name="quote" type="text" value="{{data.quote.value}}" placeholder="Quote" /></h2>
     </div>
   </header>
-  <label class="resource-label">ATTRIBUTES</label>
-  <div class="resources grid grid-2col">
-    <div class="resources flexcol">
-      {{#each data.attributes as |attribute key|}}
+  <div class="dice">
+    <label class="resource-label">COMMON DICE ROLLS</label>
+    <div class="attribute flexcol">
       <div class="attribute flexrow">
-        <label for="data.attribute.{{key}}.value" class="resource-label">{{key}}</label>
-        <input type="text" name="data.attributes.{{key}}.value" value="{{attribute.value}}" data-dtype="Number" />
+        <span class="rollable" data-roll="3d10kl1">m</span>
+        <span class="rollable" data-roll="3d10dl1dh1">C</span>
+        <span class="rollable" data-roll="3d10kh1">M</span>
+        <!--        
+          <span class="rollable" data-roll="m">m</span>
+        <span class="rollable" data-roll="C">C</span>
+        <span class="rollable" data-roll="M">M</span>
+      -->
       </div>
-      {{/each}}
-    </div>
-    <div class="resources flexcol">
-      {{#each data.drama_attributes as |attribute key|}}
       <div class="attribute flexrow">
-        <label for="data.attribute.{{key}}.value" class="resource-label">{{key}}</label>
-        <input type="text" name="data.drama_attributes.{{key}}.value" value="{{attribute.value}}" data-dtype="Number" />
+        <span class="rollable" data-roll="3d10dh1">mC</span>
+        <span class="rollable" data-roll="{1d10, 1d10, 1d10}">mM</span>
+        <span class="rollable" data-roll="3d10dl1">CM</span>
+        <span class="rollable" data-roll="3d10">mCM</span>
+        <!--
+        <span class="rollable" data-roll="mC">mC</span>
+        <span class="rollable" data-roll="mM">mM</span>
+        <span class="rollable" data-roll="CM">CM</span>
+        <span class="rollable" data-roll="mCM">mCM</span>
+        -->
       </div>
-      {{/each}}
     </div>
+
+    <!--<span class="ability-mod rollable" data-roll="{1d10, 1d10, 1d10}+@abilities.{{key}}.value"
+      data-label="{{ability.text}} ({{key}})">{{numberFormat ability.value decimals=0 sign=true}}</span>-->
   </div>
-  <div class="resources grid grid-2col">
-    <div class="abilities flexcol">
-      <label class="resource-label">ABILITIES</label>
-      {{#each data.abilities as |ability key|}}
-      <div class="ability flexcol">
-        <label for="data.ability.{{key}}.value" class="resource-label">{{key}}</label>
-        <input type="text" name="data.abilities.{{key}}.text" value="{{ability.text}}" />
-        <input type="text" name="data.abilities.{{key}}.value" value="{{ability.value}}" />
-        <span class="ability-mod rollable" data-roll="{1d10, 1d10, 1d10}+@abilities.{{key}}.value" 
-        data-label="{{ability.text}} ({{key}})">{{numberFormat ability.value decimals=0 sign=true}}</span>
-      </div>
-      {{/each}}
-    </div>
-    <div class="resources flexcol">
+  <div class="resources">
+    <label class="resource-label">ATTRIBUTES</label>
+    <div class="resources grid grid-2col">
       <div class="resources flexcol">
-        <label class="resource-label">COMBAT</label>
-        {{#each data.combat as |attribute key|}}
+        {{#each data.attributes as |attribute key|}}
         <div class="attribute flexrow">
           <label for="data.attribute.{{key}}.value" class="resource-label">{{key}}</label>
-          <input type="text" name="data.combat.{{key}}.value" value="{{attribute.value}}" />
-        </div>
-        {{/each}}
-        <label class="resource-label">WEAPON OR ATTACK</label>
-        {{#each data.weapons_or_attacks as |attribute key|}}
-        <div class="attribute flexrow">
-          <!--<label for="data.attribute.{{key}}.value" class="resource-label">{{key}}</label>-->
-          <input type="text" name="data.weapons_or_attacks.{{key}}.value" value="{{attribute.name}}" />
-          <input type="text" name="data.weapons_or_attacks.{{key}}.value" value="{{attribute.damage}}" />
-          <span class="ability-mod rollable" data-roll="{1d10, 1d10, 1d10}+@weapons_or_attacks.{{key}}.value"
-            data-label="{{attribute.text}} ({{key}})">{{numberFormat attribute.value decimals=0 sign=true}}</span>
+          <input type="text" name="data.attributes.{{key}}.value" value="{{attribute.value}}" data-dtype="Number" />
         </div>
         {{/each}}
       </div>
       <div class="resources flexcol">
-        <label class="resource-label">HEALTH</label>
+        {{#each data.drama_attributes as |attribute key|}}
         <div class="attribute flexrow">
-          <label class="resource-label">ENDURANCE</label>
-          <input type="text" name="endurance" value="{{data.health.endurance.value}}" />
-        </div>
-        <label class="resource-label">RESISTANCE</label>
-        {{#each data.health.resistance as |attribute key|}}
-        <div class="attribute flexrow">
-          <!--<label for="data.attribute.{{key}}.value" class="resource-label">{{key}}</label>-->
-          <input type="text" name="data.health.resistance.{{key}}.value" value="{{attribute.value}}" />
-        </div>
-        {{/each}}
-        <label class="resource-label">AFTERMATH</label>
-        {{#each data.health.aftermath as |attribute key|}}
-        <div class="attribute flexrow">
-          <!--<label for="data.attribute.{{key}}.value" class="resource-label">{{key}}</label>-->
-          <input type="text" name="data.health.aftermath.{{key}}.value" value="{{attribute.value}}" />
+          <label for="data.attribute.{{key}}.value" class="resource-label">{{key}}</label>
+          <input type="text" name="data.drama_attributes.{{key}}.value" value="{{attribute.value}}"
+            data-dtype="Number" />
         </div>
         {{/each}}
       </div>
     </div>
-  </div>
-  <div class="resources grid grid-2col">
-    <div class="abilities flexcol">
-      <label class="resource-label">OTHER_ABILITIES</label>
-      {{#each data.other_abilities as |ability key|}}
-      <div class="ability flexrow">
-        <label for="data.other_abilities.{{key}}.value" class="resource-label">{{key}}</label>
-        <input type="text" name="data.other_abilities.{{key}}.text" value="{{ability.text}}" />
-        <input type="text" name="data.other_abilities.{{key}}.value" value="{{ability.value}}" />
+    <div class="resources grid grid-2col">
+      <div class="abilities flexcol">
+        <label class="resource-label">ABILITIES</label>
+        {{#each data.abilities as |ability key|}}
+        <div class="ability flexrow">
+          <label for="data.ability.{{key}}.value" class="resource-label">{{key}}</label>
+          <input type="text" name="data.abilities.{{key}}.text" value="{{ability.text}}" />
+          <input type="text" name="data.abilities.{{key}}.value" value="{{ability.value}}" />
+        </div>
+        {{/each}}
       </div>
-      {{/each}}
+      <div class="resources flexcol">
+        <div class="resources flexcol">
+          <label class="resource-label">COMBAT</label>
+          {{#each data.combat as |attribute key|}}
+          <div class="attribute flexrow">
+            <label for="data.attribute.{{key}}.value" class="resource-label">{{key}}</label>
+            <input type="text" name="data.combat.{{key}}.value" value="{{attribute.value}}" />
+          </div>
+          {{/each}}
+          <label class="resource-label">WEAPON OR ATTACK</label>
+          {{#each data.weapons_or_attacks as |attribute key|}}
+          <div class="attribute flexrow">
+            <label for="data.attribute.{{key}}.value" class="resource-label">{{key}}</label>
+            <input type="text" name="data.weapons_or_attacks.{{key}}.value" value="{{attribute.name}}" />
+            <input type="text" name="data.weapons_or_attacks.{{key}}.value" value="{{attribute.damage}}" />
+          </div>
+          {{/each}}
+        </div>
+        <div class="resources flexcol">
+          <label class="resource-label">HEALTH</label>
+          <div class="attribute flexrow">
+            <label class="resource-label">ENDURANCE</label>
+            <input type="text" name="endurance" value="{{data.health.endurance.value}}" />
+          </div>
+          <label class="resource-label">RESISTANCE</label>
+          {{#each data.health.resistance as |attribute key|}}
+          <div class="attribute flexrow">
+            <input type="text" name="data.health.resistance.{{key}}.value" value="{{attribute.value}}" />
+          </div>
+          {{/each}}
+          <label class="resource-label">AFTERMATH</label>
+          {{#each data.health.aftermath as |attribute key|}}
+          <div class="attribute flexrow">
+            <input type="text" name="data.health.aftermath.{{key}}.value" value="{{attribute.value}}" />
+          </div>
+          {{/each}}
+        </div>
+      </div>
     </div>
-    <div class="resources flexcol">
-      <label class="resource-label">SANITY</label>
-      <div class="attribute flexrow">
-        <label class="resource-label">FORTITUDE</label>
-        <input type="text" name="fortitude" value="{{data.sanity.fortitude.value}}" />
+    <div class="resources grid grid-2col">
+      <div class="abilities flexcol">
+        <label class="resource-label">OTHER_ABILITIES</label>
+        {{#each data.other_abilities as |ability key|}}
+        <div class="ability flexrow">
+          <label for="data.other_abilities.{{key}}.value" class="resource-label">{{key}}</label>
+          <input type="text" name="data.other_abilities.{{key}}.text" value="{{ability.text}}" />
+          <input type="text" name="data.other_abilities.{{key}}.value" value="{{ability.value}}" />
+        </div>
+        {{/each}}
       </div>
-      <label class="resource-label">MENTAL_STABILITY</label>
-      {{#each data.sanity.mental_stability as |attribute key|}}
-      <div class="attribute flexrow">
-        <!--<label for="data.attribute.{{key}}.value" class="resource-label">{{key}}</label>-->
-        <input type="text" name="data.sanity.mental_stability.{{key}}.value" value="{{attribute.value}}" />
+      <div class="resources flexcol">
+        <label class="resource-label">SANITY</label>
+        <div class="attribute flexrow">
+          <label class="resource-label">FORTITUDE</label>
+          <input type="text" name="fortitude" value="{{data.sanity.fortitude.value}}" />
+        </div>
+        <label class="resource-label">MENTAL_STABILITY</label>
+        {{#each data.sanity.mental_stability as |attribute key|}}
+        <div class="attribute flexcol">
+          <input type="text" name="data.sanity.mental_stability.{{key}}.value" value="{{attribute.value}}" />
+        </div>
+        {{/each}}
+        <label class="resource-label">MENTAL_DISORDER</label>
+        {{#each data.sanity.mental_disorder as |attribute key|}}
+        <div class="attribute flexrow">
+          <input type="text" name="data.sanity.mental_disorder.{{key}}.value" value="{{attribute.value}}" />
+        </div>
+        {{/each}}
       </div>
-      {{/each}}
-      <label class="resource-label">MENTAL_DISORDER</label>
-      {{#each data.sanity.mental_disorder as |attribute key|}}
-      <div class="attribute flexrow">
-        <!--<label for="data.attribute.{{key}}.value" class="resource-label">{{key}}</label>-->
-        <input type="text" name="data.sanity.mental_disorder.{{key}}.value" value="{{attribute.value}}" />
-      </div>
-      {{/each}}
     </div>
-  </div>
-  <div class="resources grid grid-2col">
-    <div class="abilities flexcol">
-      <label class="resource-label">MILESTONES</label>
-      {{#each data.milestones as |attribute key|}}
-      <div class="attribute flexrow">
-        <input type="text" name="data.milestones.{{key}}.value" value="{{attribute.value}}" />
+    <div class="resources grid grid-2col">
+      <div class="abilities flexcol">
+        <label class="resource-label">MILESTONES</label>
+        {{#each data.milestones as |attribute key|}}
+        <div class="attribute flexrow">
+          <input type="text" name="data.milestones.{{key}}.value" value="{{attribute.value}}" />
+        </div>
+        {{/each}}
+        <label class="resource-label">COMPLICATION</label>
+        <input type="text" name="data.complication" value="{{data.complication.value}}" />
       </div>
-      {{/each}}
-      <label class="resource-label">COMPLICATION</label>
-      <input type="text" name="data.complication" value="{{data.complication.value}}" />
-    </div>
-    <div class="abilities flexcol">
-      <label class="resource-label">DEGENERATION</label>
-      <input type="text" name="data.degeneration" value="{{data.degeneration.value}}" />
-      <label class="resource-label">CURRENT STATUS</label>
-      <input type="text" name="data.degeneration.current_status" value="{{data.degeneration.current_status.value}}" />
+      <div class="abilities flexcol">
+        <label class="resource-label">DEGENERATION</label>
+        <input type="text" name="data.degeneration" value="{{data.degeneration.value}}" />
+        <label class="resource-label">CURRENT STATUS</label>
+        <input type="text" name="data.degeneration.current_status" value="{{data.degeneration.current_status.value}}" />
+      </div>
     </div>
   </div>
   {{!-- Sheet Tab Navigation --}}
